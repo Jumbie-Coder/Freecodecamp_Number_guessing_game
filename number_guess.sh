@@ -23,7 +23,6 @@ do
   ((NUM_GUESSES++))
   if [[ $GUESS =~ ^[0-9]+$ ]]
   then
-    # GUESS=$(($GUESS - 0))
     if [[ $GUESS -gt $RAND_NUM ]]
     then
       echo "It's lower than that, guess again:"
