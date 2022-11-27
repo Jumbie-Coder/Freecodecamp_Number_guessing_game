@@ -32,7 +32,6 @@ do
       echo "It's higher than that, guess again:"
     else
       echo You guessed it in $NUM_GUESSES tries. The secret number was $RAND_NUM. Nice job!
-      # GAMES_PLAYED=$($PSQL "SELECT games_played FROM users WHERE username='$USERNAME'")
       BEST_GAME=$($PSQL "SELECT best_game FROM users WHERE username='$USERNAME'")
       UPDATE_GAMES_PLAYED=$($PSQL "UPDATE users SET games_played=games_played+1 WHERE username='$USERNAME'")
       if [[ $NUM_GUESSES -lt $BEST_GAME || $BEST_GAME == 0 ]]
